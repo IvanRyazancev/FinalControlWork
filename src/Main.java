@@ -20,23 +20,48 @@ public class Main {
             scanner.nextLine(); // Очистка буфера
 
             if (choice == 1) {
-                System.out.println("Введите тип животного (собака/кошка):");
+                System.out.println("Введите тип животного (домашнее - 1; дикое - 2):");
                 String animalType = scanner.nextLine();
 
-                System.out.println("Введите имя животного:");
-                String animalName = scanner.nextLine();
+                if (animalType == "1") {
+                    System.out.println("Введите вид животного (собака - 1; кошка - 2; хомяк - 3):");
+                    String typeOfAnimal = scanner.nextLine();
 
-                Animal animal;
-                if (animalType.equalsIgnoreCase("собака")) {
-                    animal = new Dog(animalName);
-                } else if (animalType.equalsIgnoreCase("кошка")) {
-                    animal = new Cat(animalName);
+                    System.out.println("Введите имя животного:");
+                    String animalName = scanner.nextLine();
+
+                    Pets pet;
+                    if (typeOfAnimal == "1") {
+                        pet = new Dog(animalName);
+                    } else if (typeOfAnimal == "2") {
+                        pet = new Cat(animalName);
+                    } else if (typeOfAnimal == "3") {
+                        pet = new Hamster(animalName);
+                    } else {
+                        System.out.println("Неверный вид животного.");
+                        continue;
+                    }
+                    registry.addAnimal(pet);
                 } else {
-                    System.out.println("Неверный тип животного.");
-                    continue;
-                }
+                    System.out.println("Введите вид животного (лошадь - 1; верблюд - 2; осел - 3):");
+                    String typeOfAnimal = scanner.nextLine();
 
-                registry.addAnimal(animal);
+                    System.out.println("Введите имя животного:");
+                    String animalName = scanner.nextLine();
+
+                    PackAnimals packAnimal;
+                    if (typeOfAnimal == "1") {
+                        packAnimal = new Horse(animalName);
+                    } else if (typeOfAnimal == "2") {
+                        packAnimal = new Camel(animalName);
+                    } else if (typeOfAnimal == "3") {
+                        packAnimal = new Donkey(animalName);
+                    } else {
+                        System.out.println("Неверный тип животного.");
+                        continue;
+                    }
+                    registry.addAnimal(packAnimal);
+                }
             } else if (choice == 2) {
                 System.out.println("Введите имя животного:");
                 String animalName = scanner.nextLine();

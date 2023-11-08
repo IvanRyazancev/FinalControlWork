@@ -20,7 +20,7 @@ public class PackAnimals extends Animal{
 class Horse extends PackAnimals {
 
 
-    public Horse(String name, String type) {
+    public Horse(String name) {
         super(name, "Лошадь");
     }
 
@@ -41,7 +41,7 @@ class Horse extends PackAnimals {
 }
 
 class Camel extends PackAnimals {
-    public Camel(String name, String type) {
+    public Camel(String name) {
         super(name, "Верблюд");
     }
 
@@ -62,7 +62,7 @@ class Camel extends PackAnimals {
 }
 
 class Donkey extends PackAnimals {
-    public Donkey(String name, String type) {
+    public Donkey(String name) {
         super(name, "Осел");
     }
 
