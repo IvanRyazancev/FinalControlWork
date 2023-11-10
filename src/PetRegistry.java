@@ -1,6 +1,4 @@
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 
 
 abstract class Animal {
@@ -8,24 +6,21 @@ abstract class Animal {
     private String name;
     private String type;
     private int birthDay;
-    private List<String> commands;
+    protected List<String> commands;
 
     private static int totalCount = 0;
-
-    public Animal(String name, int age) {
-        // ...
-        totalCount++;
-    }
 
     public static int getTotalCount() {
         return totalCount;
     }
-    public Animal(String name, String type) {
-        this.id = id;
+
+    public Animal(String name, String type, int birthDay) {
+        this.id = totalCount++;
         this.name = name;
         this.type = type;
         this.birthDay = birthDay;
         this.commands = new ArrayList<>();
+        // totalCount++;
     }
 
     public int getId() {
@@ -33,7 +28,8 @@ abstract class Animal {
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.id = 0;
+
     }
 
     public int getBirthDay() {
@@ -71,10 +67,6 @@ abstract class Animal {
 }
 
 
-
-
-
-
 public class PetRegistry {
     private List<Animal> animalList;
 
@@ -84,8 +76,8 @@ public class PetRegistry {
 
     public void addAnimal(Animal animal) {
         animalList.add(animal);
-        System.out.println(animal.getType() + " " + animal.getName() + " добавлен(а) в реестр под номером" + "ID" +
-                animal.getId());
+        System.out.println(animal.getType() + " " + animal.getName() + " добавлен(а) в реестр под номером" + " " +
+                "ID:" + " " + animal.getId());
     }
 
     public void listAnimalsByBirthdate() {
@@ -94,18 +86,24 @@ public class PetRegistry {
         } else {
             System.out.println("Список животных по дате рождения:");
 
-            // Сортировка животных по имени
-            animalList.sort((a1, a2) -> a1.getName().compareToIgnoreCase(a2.getName()));
+            Collections.sort(animalList, new Comparator<Animal>() {
+                @Override
+                public int compare(Animal o1, Animal o2) {
+                    return o1.getBirthDay() - o2.getBirthDay();
+                }
+            });
+
 
             for (Animal animal : animalList) {
-                System.out.println(animal.getId() + " "+ animal.getType() + " " + animal.getName() + " " +
-                        animal.getBirthDay());
+                System.out.println("ID: " + animal.getId() + " " + "Животное: " + animal.getType() + " По имени: "
+                        + animal.getName() + " Возрастом " + animal.getBirthDay());
             }
         }
     }
 
-    public Animal[] getAnimalList() {
-        return new Animal[0];
+    public List<Animal> getAnimalList() {
+
+        return animalList;
     }
 }
 

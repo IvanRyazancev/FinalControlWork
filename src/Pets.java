@@ -1,13 +1,10 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
-public class Pets extends Animal{
-    public Pets(String name, String type) {
-        super(name, type);
-    }
+public class Pets extends Animal {
 
-    public Pets(String name, int age, String breed)
-    {
-        super(name, age);
+    public Pets(String name, String breed, int age) {
+        super(name, breed, age);
     }
 
     @Override
@@ -16,15 +13,15 @@ public class Pets extends Animal{
     }
 
 }
+
 class Dog extends Pets {
-    public Dog(String name) {
-        super(name, "Собака");
-    }
 
-    public Dog(String name, int age, String breed) {
-        super(name, age, breed);
+    public Dog(String name, int age) {
+        super(name, "Собака", age);
 
     }
+
+
 
     @Override
     public void trainNewCommand() {
@@ -39,14 +36,13 @@ class Dog extends Pets {
 }
 
 class Cat extends Pets {
-    public Cat(String name) {
-        super(name, "Кошка");
-    }
-
-    public Cat(String name, int age, String breed) {
-        super(name, age, breed);
+    public Cat(String name, int age) {
+        super(name, "Кошка", age);
 
     }
+
+
+
     @Override
     public void trainNewCommand() {
         Scanner scanner = new Scanner(System.in);
@@ -60,8 +56,9 @@ class Cat extends Pets {
 }
 
 class Hamster extends Pets {
-    public Hamster(String name) {
-        super(name, "Хомяк");
+    public Hamster(String name, int age) {
+        super(name, "Хомяк", age);
+
     }
 
 

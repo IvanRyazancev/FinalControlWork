@@ -14,7 +14,8 @@ public class Main {
             System.out.println("2. Вывести список команд для животного");
             System.out.println("3. Обучить новой команде");
             System.out.println("4. Вывести список животных по дате рождения");
-            System.out.println("5. Выйти");
+            System.out.println("5. Общее количество животных ");
+            System.out.println("6. Выйти");
 
             int choice = scanner.nextInt();
             scanner.nextLine(); // Очистка буфера
@@ -23,44 +24,60 @@ public class Main {
                 System.out.println("Введите тип животного (домашнее - 1; дикое - 2):");
                 String animalType = scanner.nextLine();
 
-                if (animalType == "1") {
-                    System.out.println("Введите вид животного (собака - 1; кошка - 2; хомяк - 3):");
-                    String typeOfAnimal = scanner.nextLine();
+                switch (animalType) {
+                    case "1": {
+                        System.out.println("Введите вид животного (собака - 1; кошка - 2; хомяк - 3):");
+                        String typeOfAnimal = scanner.nextLine();
 
-                    System.out.println("Введите имя животного:");
-                    String animalName = scanner.nextLine();
+                        System.out.println("Введите имя животного:");
+                        String animalName = scanner.nextLine();
 
-                    Pets pet;
-                    if (typeOfAnimal == "1") {
-                        pet = new Dog(animalName);
-                    } else if (typeOfAnimal == "2") {
-                        pet = new Cat(animalName);
-                    } else if (typeOfAnimal == "3") {
-                        pet = new Hamster(animalName);
-                    } else {
-                        System.out.println("Неверный вид животного.");
-                        continue;
+                        System.out.println("Введите возраст животного:");
+                        int age = scanner.nextInt();
+
+                        Pets pet;
+                        if (typeOfAnimal.equalsIgnoreCase("1")) {
+                            pet = new Dog(animalName, age);
+                        } else if (typeOfAnimal.equalsIgnoreCase("2")) {
+                            pet = new Cat(animalName, age);
+                        } else if (typeOfAnimal.equalsIgnoreCase("3")) {
+                            pet = new Hamster(animalName, age);
+                        } else {
+                            System.out.println("Неверный вид животного.");
+                            continue;
+                        }
+                        registry.addAnimal(pet);
+                        break;
                     }
-                    registry.addAnimal(pet);
-                } else {
-                    System.out.println("Введите вид животного (лошадь - 1; верблюд - 2; осел - 3):");
-                    String typeOfAnimal = scanner.nextLine();
 
-                    System.out.println("Введите имя животного:");
-                    String animalName = scanner.nextLine();
+                    case "2": {
+                        System.out.println("Введите вид животного (лошадь - 1; верблюд - 2; осел - 3):");
+                        String typeOfAnimal = scanner.nextLine();
 
-                    PackAnimals packAnimal;
-                    if (typeOfAnimal == "1") {
-                        packAnimal = new Horse(animalName);
-                    } else if (typeOfAnimal == "2") {
-                        packAnimal = new Camel(animalName);
-                    } else if (typeOfAnimal == "3") {
-                        packAnimal = new Donkey(animalName);
-                    } else {
+                        System.out.println("Введите имя животного:");
+                        String animalName = scanner.nextLine();
+
+                        System.out.println("Введите возраст животного:");
+                        int age = scanner.nextInt();
+
+                        PackAnimals packAnimal;
+                        if (typeOfAnimal.equalsIgnoreCase("1")) {
+                            packAnimal = new Horse(animalName, age);
+                        } else if (typeOfAnimal.equalsIgnoreCase("2")) {
+                            packAnimal = new Camel(animalName, age);
+                        } else if (typeOfAnimal.equalsIgnoreCase("3")) {
+                            packAnimal = new Donkey(animalName, age);
+                        } else {
+                            System.out.println("Неверный вид животного.");
+                            continue;
+                        }
+                        registry.addAnimal(packAnimal);
+                        break;
+                    }
+
+                    default:
                         System.out.println("Неверный тип животного.");
-                        continue;
-                    }
-                    registry.addAnimal(packAnimal);
+                        break;
                 }
             } else if (choice == 2) {
                 System.out.println("Введите имя животного:");
@@ -99,13 +116,14 @@ public class Main {
             } else if (choice == 4) {
                 registry.listAnimalsByBirthdate();
             } else if (choice == 5) {
+                System.out.println("Общее количество животных: " + Animal.getTotalCount());
+            } else if (choice == 6) {
                 System.out.println("Программа завершена.");
                 break;
             } else {
                 System.out.println("Неверный выбор. Пожалуйста, введите правильный выбор.");
             }
         }
-        System.out.println("Общее количество животных: " + Animal.getTotalCount());
         scanner.close();
     }
 }

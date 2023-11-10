@@ -1,13 +1,9 @@
 import java.util.Scanner;
 
-public class PackAnimals extends Animal{
+public class PackAnimals extends Animal {
 
-    public PackAnimals(String name, String type) {
-        super(name, type);
-    }
-
-    public PackAnimals(String name, int age, String breed) {
-        super(name, age);
+    public PackAnimals(String name, String breed, int age) {
+        super(name, breed, age);
     }
 
     @Override
@@ -19,13 +15,8 @@ public class PackAnimals extends Animal{
 
 class Horse extends PackAnimals {
 
-
-    public Horse(String name) {
-        super(name, "Лошадь");
-    }
-
-    public Horse(String name, int age, String breed) {
-        super(name, age, breed);
+    public Horse(String name, int age) {
+        super(name, "Лошадь", age);
     }
 
     @Override
@@ -41,12 +32,9 @@ class Horse extends PackAnimals {
 }
 
 class Camel extends PackAnimals {
-    public Camel(String name) {
-        super(name, "Верблюд");
-    }
 
-    public Camel(String name, int age, String breed) {
-        super(name, age, breed);
+    public Camel(String name, int age) {
+        super(name,  "Верблюд", age);
     }
 
     @Override
@@ -62,13 +50,10 @@ class Camel extends PackAnimals {
 }
 
 class Donkey extends PackAnimals {
-    public Donkey(String name) {
-        super(name, "Осел");
+    public Donkey(String name, int age) {
+        super(name,  "Осел", age);
     }
 
-    public Donkey(String name, int age, String breed) {
-        super(name, age, breed);
-    }
 
     @Override
     public void trainNewCommand() {
