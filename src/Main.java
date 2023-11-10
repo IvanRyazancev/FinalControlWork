@@ -21,7 +21,7 @@ public class Main {
             scanner.nextLine(); // Очистка буфера
 
             if (choice == 1) {
-                System.out.println("Введите тип животного (домашнее - 1; дикое - 2):");
+                System.out.println("Введите тип животного (домашнее - 1; вьючное - 2):");
                 String animalType = scanner.nextLine();
 
                 switch (animalType) {
