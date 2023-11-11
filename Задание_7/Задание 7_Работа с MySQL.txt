@@ -1,0 +1,845 @@
+  205  cat << EOF > Pets
+собаки
+кошки
+хомяки
+EOF
+
+  206  cat << EOF > "Pack animals"
+лошади
+верблюды
+ослы
+EOF
+
+  207  cat Pets "Pack animals" > all_animals
+  208  cat all_animals
+  209  mv all_animals "Human Friends"
+  210  ls
+  211  clear
+  212  cd /mnt/c/users/ryaza/desctop/Ex_1_2/
+  213  clear
+  214  cd /mnt/c/users/ryaza/desktop/Ex_1_2/
+  215  cd ./.
+  216  clear
+  217  cd /mnt/c/users/ryaza/desktop/
+  218  mv "Human Friends" "PackAnimals.txt" "Pets.txt" ~/Documents/
+  219  clear
+  220  mv "Human Friends" "PackAnimals.txt" "Pets.txt" ~/Ex_1_2/
+  221  mv "Human Friends" "PackAnimals.txt" "Pets.txt" ~/mnt/c/users/ryaza/desktop/Ex_1_2/
+  222  mv "Human Friends" "PackAnimals.txt" "Pets.txt" /mnt/c/users/ryaza/desktop/Ex_1_2/
+  223  mv "Human Friends" "Pack animals.txt" "Pets.txt" /mnt/c/users/ryaza/desktop/Ex_1_2/
+  224  mv "Pack animals" "Pets" /mnt/c/users/ryaza/desktop/Ex_1_2/
+  225  cd /mnt/c/users/ryaza/desktop/Ex_1_2/
+  226  clear
+  227  ls
+  228  mv Human Friends "all_animals"
+  229  mv Human_Friends "all_animals"
+  230  mv HumanFriends "all_animals"
+  231  mv "HumanFriends" "all_animals"
+  232  rm "Human Friends"
+  233  ls
+  234  clear
+  235  cat Pets "Pack animals" > all_animals
+  236  cat all_animals
+  237  mv all_animals "Human Friends"
+  238  ls
+  239  mkdir New_Directory
+  240  mv 'Human Friends' New_Directory/
+  241  cd /mnt/c/users/ryaza/desktop/Ex_1_2/New_Directory/
+  242  ls
+  243  cd /mnt/c/users/ryaza/desktop/Ex_1_2/
+  244  deb http://repo.mysql.com/apt/debian/ buster mysql-8.0
+  245  nano
+  246  clear
+  247  nano
+  248  sudo apt install update
+  249  sudo apt install sources.list
+  250  mv sources.list msql_rep
+  251  clear
+  252  sudo apt install sql_rep
+  253  sudo apt install msql_rep
+  254  apt search msql_rep
+  255  sudo apt install msql_rep
+  256  sudo apt-get update
+  257  sudo apt-get install software-properties-common
+  258  sudo add-apt-repository 'deb http://repo.mysql.com/apt/ubuntu/ xenial mysql-5.7'
+  259  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 8C718D3B5072E1F5
+  260  sudo apt-get update
+  261  sudo apt-get install msql_rep
+  262  clear
+  263  sudo add-apt-repository --remove 'deb http://repo.mysql.com/apt/ubuntu/ xenial mysql-5.7'
+  264  wget -c https://dev.mysql.com/doc/refman/8.0/en/checking-gpg-signature.html
+  265  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5072E1F5
+  266  sudo apt-get update
+  267  sudo add-apt-repository 'deb http://repo.mysql.com/apt/ubuntu/ xenial mysql-5.7'
+  268  .sudo apt-get install mysql-client
+  269  sudo apt-get install mysql-client
+  270  sudo apt-get update
+  271  sudo add-apt-repository 'deb http://repo.mysql.com/apt/ubuntu/ xenial mysql-5.7'
+  272  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 5072E1F5
+  273  sudo apt-get update
+  274  sudo apt-get install mysql-server
+  275  wget https://dev.mysql.com/get/mysql-apt-config_0.8.24-1_all.deb
+  276  cd Загрузки sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+  277  cd /Загрузки/
+  278  cd /mnt/c/users/ryaza/Downloads/
+  279  sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+  280  cd /mnt/c/users/ryaza/desktop/Ex_1_2/
+  281  sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+  282  sudo apt-get update
+  283  sudo apt-get install mysql-server
+  284  systemctl status mysql
+  285  clear
+  286  sudo dpkg -i package.deb
+  287  sudo dpkg -i mysql-apt-config_0.8.24-1_all.deb
+  288  clear
+  289  wget https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+  290  sudo dpkg - i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+  291  sudo dpkg -i mysql-connector-j_8.0.32-1ubuntu22.04_all.deb
+  292  sudo dpkg -r mysql-connector-j
+  293  sudo apt-get autoremove
+  294  history
+  295  tree
+  296  history
+ryazan@Ivan:/mnt/c/users/ryaza/desktop/Ex_1_2$ sudo mysql -p
+[sudo] password for ryazan:
+Enter password:
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 8
+Server version: 8.0.35 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2023, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.06 sec)
+
+mysql> CREATE DATABASE human_friends;
+Query OK, 1 row affected (0.04 sec)
+
+mysql> SHOW DATABASES;
++--------------------+
+| Database           |
++--------------------+
+| human_friends      |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> CREATE TABLE pets(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '0000-00-00', commands VARCHAR(100) NOT NULL DEFAULT '', PRIMARY KEY (id));
+ERROR 1067 (42000): Invalid default value for 'date_of_birth'
+mysql>
+mysql> 067 (42000): Invalid default value for 'date_of_bith'
+mysql> CREATE TABLE pets(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '0000-00-00', commands VARCHAR(100) NOT NULL DEFAULT '', PRIMARY KEY (id));
+ERROR 1067 (42000): Invalid default value for 'date_of_birth'
+mysql> CREATE TABLE pets(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '0000/00/00', commands VARCHAR(100) NOT NULL DEFAULT '', PRIMARY KEY (id));
+ERROR 1067 (42000): Invalid default value for 'date_of_birth'
+mysql> CREATE TABLE pets(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '1970-01-01', commands VARCHAR(100) NOT NULL DEFAULT '', PRIMARY KEY (id));
+Query OK, 0 rows affected (0.13 sec)
+
+mysql> show tables;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| pets                    |
++-------------------------+
+1 row in set (0.00 sec)
+
+mysql> INSERT INTO pets (name, date_of_bith, commands) VALUES ('dog_1', '2022-01-01', 'seat'), ('dog_2', '2023-01-01', 'voice'), ('cat_1',
+    -> '2022-01-01', 'purring'), ('cat_2', '2023-01-01', 'purring'), ('hamster_1', '2022-01-01', 'no command'), ('hamster_2', '2023-01-01', 'no command');
+ERROR 1054 (42S22): Unknown column 'date_of_bith' in 'field list'
+mysql> INSERT INTO pets (name, date_of_birth, commands) VALUES ('dog_1', '2022-01-01', 'seat'), ('dog_2', '2023-01-01', 'voice'), ('cat_1', '2022-01-01', 'purring'), ('cat_2', '2023-01-01', 'purring'), ('hamster_1', '2022-01-01', 'no command'), ('hamster_2', '2023-01-01'
+, 'no command');
+Query OK, 6 rows affected (0.03 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE pets CHANGE COLUMN date_of_bith date_of_birth VARCHAR(100);
+ERROR 1054 (42S22): Unknown column 'date_of_bith' in 'pets'
+mysql> ALTER TABLE pets CHANGE COLUMN date_of_birth date_of_birth VARCHAR(100);
+Query OK, 6 rows affected (0.38 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM pets;
++----+-----------+---------------+------------+
+| id | name      | date_of_birth | commands   |
++----+-----------+---------------+------------+
+|  1 | dog_1     | 2022-01-01    | seat       |
+|  2 | dog_2     | 2023-01-01    | voice      |
+|  3 | cat_1     | 2022-01-01    | purring    |
+|  4 | cat_2     | 2023-01-01    | purring    |
+|  5 | hamster_1 | 2022-01-01    | no command |
+|  6 | hamster_2 | 2023-01-01    | no command |
++----+-----------+---------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> CREATE TABLE pack_animals(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT
+    -> '0000-
+    '>
+    '> ^C
+mysql> CREATE TABLE pets(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '2000-01-01', commands VARCHAR(100) NOT NULL DEFAULT '', PRIMARY KEY (id));
+ERROR 1050 (42S01): Table 'pets' already exists
+mysql> CREATE TABLE pack_animals(id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '2000-01-01', commands VARCHAR(100) NOT NULL DEFAULT '', PRIMARY KEY (id));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> SHOW TABLES
+    -> ;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| pack_animals            |
+| pets                    |
++-------------------------+
+2 rows in set (0.00 sec)
+
+mysql> INSERT INTO pack_animals (name, date_of_bith) VALUES ('horse_1', '2022-01-01'), ('horse_2', '2023-01-01'), ('camel_1', '2022-01-01'), ('camel_2', '2023-01-01'), ('donkey_1', '2022-01-01'), ('donkey_2', '2023-01-01');
+ERROR 1054 (42S22): Unknown column 'date_of_bith' in 'field list'
+mysql> INSERT INTO pack_animals (name, date_of_birth) VALUES ('horse_1', '2022-01-01'), ('horse_2', '2023-01-01'), ('camel_1', '2022-01-01'), ('camel_2', '2023-01-01'), ('donkey_1', '2022-01-01'), ('donkey_2', '2023-01-01');
+Query OK, 6 rows affected (0.02 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> ALTER TABLE pack_animals CHANGE COLUMN date_of_bith date_of_birth VARCHAR(100);
+ERROR 1054 (42S22): Unknown column 'date_of_bith' in 'pack_animals'
+mysql> ALTER TABLE pack_animals CHANGE COLUMN date_of_birth date_of_birth VARCHAR(100);
+Query OK, 6 rows affected (0.25 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM pack_animals;
++----+----------+---------------+----------+
+| id | name     | date_of_birth | commands |
++----+----------+---------------+----------+
+|  1 | horse_1  | 2022-01-01    |          |
+|  2 | horse_2  | 2023-01-01    |          |
+|  3 | camel_1  | 2022-01-01    |          |
+|  4 | camel_2  | 2023-01-01    |          |
+|  5 | donkey_1 | 2022-01-01    |          |
+|  6 | donkey_2 | 2023-01-01    |          |
++----+----------+---------------+----------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM pack_animals, pets;
++----+----------+---------------+----------+----+-----------+---------------+------------+
+| id | name     | date_of_birth | commands | id | name      | date_of_birth | commands   |
++----+----------+---------------+----------+----+-----------+---------------+------------+
+|  6 | donkey_2 | 2023-01-01    |          |  1 | dog_1     | 2022-01-01    | seat       |
+|  5 | donkey_1 | 2022-01-01    |          |  1 | dog_1     | 2022-01-01    | seat       |
+|  4 | camel_2  | 2023-01-01    |          |  1 | dog_1     | 2022-01-01    | seat       |
+|  3 | camel_1  | 2022-01-01    |          |  1 | dog_1     | 2022-01-01    | seat       |
+|  2 | horse_2  | 2023-01-01    |          |  1 | dog_1     | 2022-01-01    | seat       |
+|  1 | horse_1  | 2022-01-01    |          |  1 | dog_1     | 2022-01-01    | seat       |
+|  6 | donkey_2 | 2023-01-01    |          |  2 | dog_2     | 2023-01-01    | voice      |
+|  5 | donkey_1 | 2022-01-01    |          |  2 | dog_2     | 2023-01-01    | voice      |
+|  4 | camel_2  | 2023-01-01    |          |  2 | dog_2     | 2023-01-01    | voice      |
+|  3 | camel_1  | 2022-01-01    |          |  2 | dog_2     | 2023-01-01    | voice      |
+|  2 | horse_2  | 2023-01-01    |          |  2 | dog_2     | 2023-01-01    | voice      |
+|  1 | horse_1  | 2022-01-01    |          |  2 | dog_2     | 2023-01-01    | voice      |
+|  6 | donkey_2 | 2023-01-01    |          |  3 | cat_1     | 2022-01-01    | purring    |
+|  5 | donkey_1 | 2022-01-01    |          |  3 | cat_1     | 2022-01-01    | purring    |
+|  4 | camel_2  | 2023-01-01    |          |  3 | cat_1     | 2022-01-01    | purring    |
+|  3 | camel_1  | 2022-01-01    |          |  3 | cat_1     | 2022-01-01    | purring    |
+|  2 | horse_2  | 2023-01-01    |          |  3 | cat_1     | 2022-01-01    | purring    |
+|  1 | horse_1  | 2022-01-01    |          |  3 | cat_1     | 2022-01-01    | purring    |
+|  6 | donkey_2 | 2023-01-01    |          |  4 | cat_2     | 2023-01-01    | purring    |
+|  5 | donkey_1 | 2022-01-01    |          |  4 | cat_2     | 2023-01-01    | purring    |
+|  4 | camel_2  | 2023-01-01    |          |  4 | cat_2     | 2023-01-01    | purring    |
+|  3 | camel_1  | 2022-01-01    |          |  4 | cat_2     | 2023-01-01    | purring    |
+|  2 | horse_2  | 2023-01-01    |          |  4 | cat_2     | 2023-01-01    | purring    |
+|  1 | horse_1  | 2022-01-01    |          |  4 | cat_2     | 2023-01-01    | purring    |
+|  6 | donkey_2 | 2023-01-01    |          |  5 | hamster_1 | 2022-01-01    | no command |
+|  5 | donkey_1 | 2022-01-01    |          |  5 | hamster_1 | 2022-01-01    | no command |
+|  4 | camel_2  | 2023-01-01    |          |  5 | hamster_1 | 2022-01-01    | no command |
+|  3 | camel_1  | 2022-01-01    |          |  5 | hamster_1 | 2022-01-01    | no command |
+|  2 | horse_2  | 2023-01-01    |          |  5 | hamster_1 | 2022-01-01    | no command |
+|  1 | horse_1  | 2022-01-01    |          |  5 | hamster_1 | 2022-01-01    | no command |
+|  6 | donkey_2 | 2023-01-01    |          |  6 | hamster_2 | 2023-01-01    | no command |
+|  5 | donkey_1 | 2022-01-01    |          |  6 | hamster_2 | 2023-01-01    | no command |
+|  4 | camel_2  | 2023-01-01    |          |  6 | hamster_2 | 2023-01-01    | no command |
+|  3 | camel_1  | 2022-01-01    |          |  6 | hamster_2 | 2023-01-01    | no command |
+|  2 | horse_2  | 2023-01-01    |          |  6 | hamster_2 | 2023-01-01    | no command |
+|  1 | horse_1  | 2022-01-01    |          |  6 | hamster_2 | 2023-01-01    | no command |
++----+----------+---------------+----------+----+-----------+---------------+------------+
+36 rows in set (0.00 sec)
+
+mysql> SELECT * FROM pack_animals;
++----+----------+---------------+----------+
+| id | name     | date_of_birth | commands |
++----+----------+---------------+----------+
+|  1 | horse_1  | 2022-01-01    |          |
+|  2 | horse_2  | 2023-01-01    |          |
+|  3 | camel_1  | 2022-01-01    |          |
+|  4 | camel_2  | 2023-01-01    |          |
+|  5 | donkey_1 | 2022-01-01    |          |
+|  6 | donkey_2 | 2023-01-01    |          |
++----+----------+---------------+----------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM pets;
++----+-----------+---------------+------------+
+| id | name      | date_of_birth | commands   |
++----+-----------+---------------+------------+
+|  1 | dog_1     | 2022-01-01    | seat       |
+|  2 | dog_2     | 2023-01-01    | voice      |
+|  3 | cat_1     | 2022-01-01    | purring    |
+|  4 | cat_2     | 2023-01-01    | purring    |
+|  5 | hamster_1 | 2022-01-01    | no command |
+|  6 | hamster_2 | 2023-01-01    | no command |
++----+-----------+---------------+------------+
+6 rows in set (0.00 sec)
+
+mysql> DELETE FROM pack_animals WHERE name LIKE 'camel%';
+Query OK, 2 rows affected (0.02 sec)
+
+mysql> SELECT * FROM pack_animals;
++----+----------+---------------+----------+
+| id | name     | date_of_birth | commands |
++----+----------+---------------+----------+
+|  1 | horse_1  | 2022-01-01    |          |
+|  2 | horse_2  | 2023-01-01    |          |
+|  5 | donkey_1 | 2022-01-01    |          |
+|  6 | donkey_2 | 2023-01-01    |          |
++----+----------+---------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> CREATE TABLE all_animals (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '2000-01-01', command VARCHAR(100) NOT NULL DEFAULT '', age DATE NOT NULL DEFAULT '0000-00-00', PRIMARY KEY (ID));
+ERROR 1067 (42000): Invalid default value for 'age'
+mysql> CREATE TABLE all_animals (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '2000-01-01', command VARCHAR(100) NOT NULL DEFAULT '', age DATE NOT NULL DEFAULT '2000-01-01', PRIMARY KEY (ID));
+Query OK, 0 rows affected (0.11 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| all_animals             |
+| pack_animals            |
+| pets                    |
++-------------------------+
+3 rows in set (0.00 sec)
+
+mysql> ALTER TABLE pets ADD COLUMN age INT(50) NOT NULL AFTER date_of_birth;
+Query OK, 0 rows affected, 1 warning (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 1
+
+mysql> select * from pets;
++----+-----------+---------------+-----+------------+
+| id | name      | date_of_birth | age | commands   |
++----+-----------+---------------+-----+------------+
+|  1 | dog_1     | 2022-01-01    |   0 | seat       |
+|  2 | dog_2     | 2023-01-01    |   0 | voice      |
+|  3 | cat_1     | 2022-01-01    |   0 | purring    |
+|  4 | cat_2     | 2023-01-01    |   0 | purring    |
+|  5 | hamster_1 | 2022-01-01    |   0 | no command |
+|  6 | hamster_2 | 2023-01-01    |   0 | no command |
++----+-----------+---------------+-----+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) AS age FROM pets;
++-----------+---------------+------+
+| name      | date_of_birth | age  |
++-----------+---------------+------+
+| dog_1     | 2022-01-01    |   22 |
+| dog_2     | 2023-01-01    |   10 |
+| cat_1     | 2022-01-01    |   22 |
+| cat_2     | 2023-01-01    |   10 |
+| hamster_1 | 2022-01-01    |   22 |
+| hamster_2 | 2023-01-01    |   10 |
++-----------+---------------+------+
+6 rows in set (0.01 sec)
+
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(YEARS-MONTH, date_of_birth, CURDATE()) AS age FROM pets;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'YEARS-MONTH, date_of_birth, CURDATE()) AS age FROM pets' at line 1
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) - FLOOR(DATEDIFF(CURDATE(), date_of_birth) / 365.25) AS age FROM pets;
++-----------+---------------+------+
+| name      | date_of_birth | age  |
++-----------+---------------+------+
+| dog_1     | 2022-01-01    |    0 |
+| dog_2     | 2023-01-01    |    0 |
+| cat_1     | 2022-01-01    |    0 |
+| cat_2     | 2023-01-01    |    0 |
+| hamster_1 | 2022-01-01    |    0 |
+| hamster_2 | 2023-01-01    |    0 |
++-----------+---------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM pets;
++----+-----------+---------------+-----+------------+
+| id | name      | date_of_birth | age | commands   |
++----+-----------+---------------+-----+------------+
+|  1 | dog_1     | 2022-01-01    |   0 | seat       |
+|  2 | dog_2     | 2023-01-01    |   0 | voice      |
+|  3 | cat_1     | 2022-01-01    |   0 | purring    |
+|  4 | cat_2     | 2023-01-01    |   0 | purring    |
+|  5 | hamster_1 | 2022-01-01    |   0 | no command |
+|  6 | hamster_2 | 2023-01-01    |   0 | no command |
++----+-----------+---------------+-----+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) AS age FROM pets;
++-----------+---------------+------+
+| name      | date_of_birth | age  |
++-----------+---------------+------+
+| dog_1     | 2022-01-01    |    1 |
+| dog_2     | 2023-01-01    |    0 |
+| cat_1     | 2022-01-01    |    1 |
+| cat_2     | 2023-01-01    |    0 |
+| hamster_1 | 2022-01-01    |    1 |
+| hamster_2 | 2023-01-01    |    0 |
++-----------+---------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) AS age FROM pets;
++-----------+---------------+------+
+| name      | date_of_birth | age  |
++-----------+---------------+------+
+| dog_1     | 2022-01-01    |   22 |
+| dog_2     | 2023-01-01    |   10 |
+| cat_1     | 2022-01-01    |   22 |
+| cat_2     | 2023-01-01    |   10 |
+| hamster_1 | 2022-01-01    |   22 |
+| hamster_2 | 2023-01-01    |   10 |
++-----------+---------------+------+
+6 rows in set (0.00 sec)
+
+mysql> UPDATE pets SET age = (select date_of_birth, TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) AS age FROM pets);
+ERROR 1241 (21000): Operand should contain 1 column(s)
+mysql> SELECT * FROM pets;
++----+-----------+---------------+-----+------------+
+| id | name      | date_of_birth | age | commands   |
++----+-----------+---------------+-----+------------+
+|  1 | dog_1     | 2022-01-01    |   0 | seat       |
+|  2 | dog_2     | 2023-01-01    |   0 | voice      |
+|  3 | cat_1     | 2022-01-01    |   0 | purring    |
+|  4 | cat_2     | 2023-01-01    |   0 | purring    |
+|  5 | hamster_1 | 2022-01-01    |   0 | no command |
+|  6 | hamster_2 | 2023-01-01    |   0 | no command |
++----+-----------+---------------+-----+------------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT * FROM all_animals;
+Empty set (0.00 sec)
+
+mysql> DROP TABLE all_animals;
+Query OK, 0 rows affected (0.07 sec)
+
+mysql> CREATE TABLE young_animals (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', age INT(50) NOT  NULL DEFAULT 0, PRIMARY KEY(id));
+Query OK, 0 rows affected, 1 warning (0.12 sec)
+
+mysql> select * from young_animals;
+Empty set (0.00 sec)
+
+mysql> SELECT pets.name, pets.age FROM pets WHERE (pets.age>12 and pets.age<36) GROUP BY name;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'human_friends.pets.age' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> SELECT pets.name, MIN(pets.age) AS min_age FROM pets WHERE pets.age > 12 AND pets.age < 36 GROUP BY pets.name;
+Empty set (0.00 sec)
+
+mysql> show tables;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| pack_animals            |
+| pets                    |
+| young_animals           |
++-------------------------+
+3 rows in set (0.00 sec)
+
+mysql> INSERT INTO young_animals (name, age) SELECT pets.name, pets.age FROM pets WHERE (pets.age>12 and pets.age<36) GROUP BY name;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'human_friends.pets.age' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> INSERT INTO young_animals (name, age)
+    -> SELECT name, age
+    -> FROM (
+    ->     SELECT name, MIN(age) AS age
+    ->     FROM pets
+    ->     WHERE age > 12 AND age < 36
+    ->     GROUP BY name
+    -> ) subquery;
+Query OK, 0 rows affected (0.00 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM young_animals;
+Empty set (0.00 sec)
+
+mysql> SELECT pets.name, pets.age FROM pets WHERE pets.age > 12 AND pets.age < 36 GROUP BY pets.name;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'human_friends.pets.age' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> SELECT pets.name, pets.age FROM pets WHERE (pets.age > 12 AND pets.age < 36) GROUP BY pets.name;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'human_friends.pets.age' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> SELECT pets.name, MIN(pets.age) AS min_age
+    ->  pets
+WFROM pets
+    -> WHERE pets.age > 12 AND pets.age < 36
+    -> GROUP BY pets.name;
+Empty set (0.01 sec)
+
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) AS age FROM pets;
++-----------+---------------+------+
+| name      | date_of_birth | age  |
++-----------+---------------+------+
+| dog_1     | 2022-01-01    |   22 |
+| dog_2     | 2023-01-01    |   10 |
+| cat_1     | 2022-01-01    |   22 |
+| cat_2     | 2023-01-01    |   10 |
+| hamster_1 | 2022-01-01    |   22 |
+| hamster_2 | 2023-01-01    |   10 |
++-----------+---------------+------+
+6 rows in set (0.00 sec)
+
+mysql> SELECT
+    ->   name,
+    ->   date_of_birth,
+    ->   FLOOR(TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) / 12) AS age_in_years
+    -> FROM
+    ->   pets;
++-----------+---------------+--------------+
+| name      | date_of_birth | age_in_years |
++-----------+---------------+--------------+
+| dog_1     | 2022-01-01    |            1 |
+| dog_2     | 2023-01-01    |            0 |
+| cat_1     | 2022-01-01    |            1 |
+| cat_2     | 2023-01-01    |            0 |
+| hamster_1 | 2022-01-01    |            1 |
+| hamster_2 | 2023-01-01    |            0 |
++-----------+---------------+--------------+
+6 rows in set (0.00 sec)
+
+mysql> CREATE TABLE young_animal AS
+    -> SELECT
+    ->   name,
+    ->   date_of_birth,
+    ->   FLOOR(TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) / 12) AS age_in_years
+    -> FROM
+    ->   pets
+    -> WHERE
+    ->   TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) > 12
+    ->   AND TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) < 36;
+Query OK, 3 rows affected (0.13 sec)
+Records: 3  Duplicates: 0  Warnings: 0
+
+mysql> SELECT *
+    -> FROM young_animal;
++-----------+---------------+--------------+
+| name      | date_of_birth | age_in_years |
++-----------+---------------+--------------+
+| dog_1     | 2022-01-01    |            1 |
+| cat_1     | 2022-01-01    |            1 |
+| hamster_1 | 2022-01-01    |            1 |
++-----------+---------------+--------------+
+3 rows in set (0.00 sec)
+
+mysql> SELECT name, date_of_birth, TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE()) AS age_in_months
+    -> FROM young_animal;
++-----------+---------------+---------------+
+| name      | date_of_birth | age_in_months |
++-----------+---------------+---------------+
+| dog_1     | 2022-01-01    |            22 |
+| cat_1     | 2022-01-01    |            22 |
+| hamster_1 | 2022-01-01    |            22 |
++-----------+---------------+---------------+
+3 rows in set (0.00 sec)
+
+mysql> show tables;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| pack_animals            |
+| pets                    |
+| young_animal            |
+| young_animals           |
++-------------------------+
+4 rows in set (0.00 sec)
+
+mysql>
+    -> 054 (42S22): Unknown column 'pack_animals.age' in 'field list'
+    -> SELECT *
+    -> FROM pack_animals;
+    -> ^C
+mysql> SELECT *
+    -> FROM pack_animals;
++----+----------+---------------+----------+
+| id | name     | date_of_birth | commands |
++----+----------+---------------+----------+
+|  1 | horse_1  | 2022-01-01    |          |
+|  2 | horse_2  | 2023-01-01    |          |
+|  5 | donkey_1 | 2022-01-01    |          |
+|  6 | donkey_2 | 2023-01-01    |          |
++----+----------+---------------+----------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE pack_animals
+    -> ADD COLUMN age_in_months INT;
+TE pack_animals
+SET age_in_months = TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE());Query OK, 0 rows affected (0.08 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql>
+mysql> UPDATE pack_animals
+    -> SET age_in_months = TIMESTAMPDIFF(MONTH, date_of_birth, CURDATE());
+Query OK, 4 rows affected (0.02 sec)
+Rows matched: 4  Changed: 4  Warnings: 0
+
+mysql> SELECT * FROM pack_animals;
++----+----------+---------------+----------+---------------+
+| id | name     | date_of_birth | commands | age_in_months |
++----+----------+---------------+----------+---------------+
+|  1 | horse_1  | 2022-01-01    |          |            22 |
+|  2 | horse_2  | 2023-01-01    |          |            10 |
+|  5 | donkey_1 | 2022-01-01    |          |            22 |
+|  6 | donkey_2 | 2023-01-01    |          |            10 |
++----+----------+---------------+----------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO young_animals (name, age) SELECT pack_animals.name, pack_animals.age FROM pack_animals WHERE (pack_animals.age>12 and pack_animals.age<36) GROUP BY name;
+ERROR 1054 (42S22): Unknown column 'pack_animals.age' in 'field list'
+mysql> INSERT INTO young_animals (name, age) SELECT pack_animals.name, age_in_months FROM pack_animals WHERE (age_in_months>12 and age_in_months<36) GROUP BY name;
+ERROR 1055 (42000): Expression #2 of SELECT list is not in GROUP BY clause and contains nonaggregated column 'human_friends.pack_animals.age_in_months' which is not functionally dependent on columns in GROUP BY clause; this is incompatible with sql_mode=only_full_group_by
+mysql> INSERT INTO young_animals (name, age)
+ECT     -> SELECT name, age_in_months
+    -> FROM (
+    ->     SELECT name, age_in_months
+    ->     FROM pack_animals
+    ->     WHERE age_in_months > 12 AND age_in_months < 36
+  GRO    ->     GROUP BY name, age_in_months
+    -> ) subquery;
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM young_animals;
++----+----------+-----+
+| id | name     | age |
++----+----------+-----+
+|  1 | horse_1  |  22 |
+|  2 | donkey_1 |  22 |
++----+----------+-----+
+2 rows in set (0.00 sec)
+
+mysql> CREATE TABLE animals (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', date_of_birth DATE NOT NULL DEFAULT '2000-01-01', command VARCHAR(100) NOT NULL DEFAULT '', age DATE NOT NULL DEFAULT '2000-01-01', PRIMARY KEY (ID));
+Query OK, 0 rows affected (0.12 sec)
+
+mysql> SHOW TABLES;
++-------------------------+
+| Tables_in_human_friends |
++-------------------------+
+| animals                 |
+| pack_animals            |
+| pets                    |
+| young_animal            |
+| young_animals           |
++-------------------------+
+5 rows in set (0.00 sec)
+
+mysql> INSERT INTO animals (name, date_of_birth, age) SELECT name, date_of_birth, age FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age' in 'field list'
+mysql> INSERT INTO animals (name, date_of_birth, age)
+LECT    -> SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) AS age
+    -> FROM pack_animals;
+ERROR 1292 (22007): Incorrect date value: '1' for column 'age' at row 1
+mysql> INSERT INTO animals (name, date_of_birth, age)
+    -> SELECT name, date_of_birth, TIMESTAMPDIFF(YEAR, date_of_birth, CURDATE()) AS age
+    -> FROM pack_animals;
+ERROR 1292 (22007): Incorrect date value: '1' for column 'age' at row 1
+mysql> INSERT INTO animals (name, date_of_birth, age) SELECT name, date_of_birth, age FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age' in 'field list'
+mysql> Select * from pack_animals;
++----+----------+---------------+----------+---------------+
+| id | name     | date_of_birth | commands | age_in_months |
++----+----------+---------------+----------+---------------+
+|  1 | horse_1  | 2022-01-01    |          |            22 |
+|  2 | horse_2  | 2023-01-01    |          |            10 |
+|  5 | donkey_1 | 2022-01-01    |          |            22 |
+|  6 | donkey_2 | 2023-01-01    |          |            10 |
++----+----------+---------------+----------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> ALTER TABLE pack_animals DROP COLUMN commands;
+Query OK, 0 rows affected (0.11 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> Select * from pack_animals;
++----+----------+---------------+---------------+
+| id | name     | date_of_birth | age_in_months |
++----+----------+---------------+---------------+
+|  1 | horse_1  | 2022-01-01    |            22 |
+|  2 | horse_2  | 2023-01-01    |            10 |
+|  5 | donkey_1 | 2022-01-01    |            22 |
+|  6 | donkey_2 | 2023-01-01    |            10 |
++----+----------+---------------+---------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO animals (name, date_of_birth, age) SELECT name, date_of_birth, age FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age' in 'field list'
+mysql> INSERT INTO animals (name, date_of_birth, age_in_months) SELECT name, date_of_birth, age_in_months FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age_in_months' in 'field list'
+mysql> DESCRIBE pack_animals;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(100) | NO   |     |         |                |
+| date_of_birth | varchar(100) | YES  |     | NULL    |                |
+| age_in_months | int          | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO animals (name, date_of_birth, age_in_months)
+    -> SELECT name, date_of_birth, age_in_months FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age_in_months' in 'field list'
+mysql> ALTER TABLE pack_animals ADD COLUMN age_in_months INT;
+ERROR 1060 (42S21): Duplicate column name 'age_in_months'
+mysql> mysql> ALTER TABLE pack_animals ADD COLUMN age_in_months INT;
+ERROR 1060 (42S21ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql> ALTER TABLE pack_animals ADD COLUMN age_in_months INT' at line 1
+mysql> ERROR 1060 (42S21): Duplicate column name 'age_in_months'
+    ->
+    -> ^C
+mysql> mysql> ALTER TABLE pack_animals ADD COLUMN age_in_months INT;
+R 1060 ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'mysql> ALTER TABLE pack_animals ADD COLUMN age_in_months INT' at line 1
+mysql> ERROR 1060 (42S21): Duplicate column name 'age_in_months'
+    ->
+    -> ^C
+mysql> INSERT INTO animals (name, date_of_birth, age_in_months)
+    -> SELECT name, date_of_birth, age_in_months FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age_in_months' in 'field list'
+mysql> DESCRIBE pack_animals;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(100) | NO   |     |         |                |
+| date_of_birth | varchar(100) | YES  |     | NULL    |                |
+| age_in_months | int          | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.00 sec)
+
+mysql> INSERT INTO animals (name, date_of_birth, age_in_months)
+CT na    -> SELECT name, date_of_birth, age_in_months FROM pack_animals;
+ERROR 1054 (42S22): Unknown column 'age_in_months' in 'field list'
+mysql>
+mysql> select * from animals;
+Empty set (0.00 sec)
+
+mysql> Describe animals;
++---------------+--------------+------+-----+------------+----------------+
+| Field         | Type         | Null | Key | Default    | Extra          |
++---------------+--------------+------+-----+------------+----------------+
+| id            | int          | NO   | PRI | NULL       | auto_increment |
+| name          | varchar(100) | NO   |     |            |                |
+| date_of_birth | date         | NO   |     | 2000-01-01 |                |
+| command       | varchar(100) | NO   |     |            |                |
+| age           | date         | NO   |     | 2000-01-01 |                |
++---------------+--------------+------+-----+------------+----------------+
+5 rows in set (0.01 sec)
+
+mysql> INSERT INTO animals (name, date_of_birth, age) SELECT name, date_of_birth, age_in_months FROM pack_animals;
+ERROR 1292 (22007): Incorrect date value: '22' for column 'age' at row 1
+mysql> ALTER TABLE animals MODIFY COLUMN age INT;
+Query OK, 0 rows affected (0.32 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO animals (name, date_of_birth, age)
+    -> SELECT name, date_of_birth, age_in_months FROM pack_animals;
+Query OK, 4 rows affected (0.03 sec)
+Records: 4  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO animals (name, date_of_birth, age, commands) SELECT name, date_of_birth, age, commands FROM pets;
+ERROR 1054 (42S22): Unknown column 'commands' in 'field list'
+mysql> INSERT INTO animals (name, date_of_birth, age, command)
+    -> SELECT name, date_of_birth, age, commands FROM pets;
+Query OK, 6 rows affected (0.02 sec)
+Records: 6  Duplicates: 0  Warnings: 0
+
+mysql> INSERT INTO animals (name, age) SELECT name, age FROM young_animals;
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from animals;
++----+-----------+---------------+------------+------+
+| id | name      | date_of_birth | command    | age  |
++----+-----------+---------------+------------+------+
+|  1 | horse_1   | 2022-01-01    |            |   22 |
+|  2 | horse_2   | 2023-01-01    |            |   10 |
+|  3 | donkey_1  | 2022-01-01    |            |   22 |
+|  4 | donkey_2  | 2023-01-01    |            |   10 |
+|  8 | dog_1     | 2022-01-01    | seat       |    0 |
+|  9 | dog_2     | 2023-01-01    | voice      |    0 |
+| 10 | cat_1     | 2022-01-01    | purring    |    0 |
+| 11 | cat_2     | 2023-01-01    | purring    |    0 |
+| 12 | hamster_1 | 2022-01-01    | no command |    0 |
+| 13 | hamster_2 | 2023-01-01    | no command |    0 |
+| 15 | horse_1   | 2000-01-01    |            |   22 |
+| 16 | donkey_1  | 2000-01-01    |            |   22 |
++----+-----------+---------------+------------+------+
+12 rows in set (0.00 sec)
+
+mysql> CREATE TABLE young_animal_new (id INT NOT NULL AUTO_INCREMENT, name VARCHAR(100) NOT NULL DEFAULT '', age INT(50) NOT NULL DEFAULT 0, PRIMARY KEY(id));
+Query OK, 0 rows affected, 1 warning (0.11 sec)
+
+mysql> INSERT INTO young_animal_new (name, age) SELECT name, age FROM pets WHERE age>12 AND age<36 UNION SELECT name, age FROM pack_animals
+    ->  WHERE age>12 AND age<36;
+ERROR 1054 (42S22): Unknown column 'age' in 'field list'
+mysql> INSERT INTO young_animal_new (name, age)
+LECT nam    -> SELECT name, age FROM pets WHERE age > 12 AND age < 36
+    -> UNION
+    -> SELECT name, age FROM pack_animals WHERE age > 12 AND age < 36;
+ERROR 1054 (42S22): Unknown column 'age' in 'field list'
+mysql> INSERT INTO young_animal_new (name, age)
+    -> SELECT name, age FROM pets WHERE age > 12 AND age < 36
+    -> UNION
+    -> SELECT name, age FROM pack_animals WHERE age > 12 AND age < 36;
+ERROR 1054 (42S22): Unknown column 'age' in 'field list'
+mysql> INSERT INTO young_animal_new (name, age) SELECT name, age FROM pets WHERE age_in_months > 12 AND age_in_months < 36 UNION SELECT name, age FROM pack_animals WHERE age_in_months > 12 AND age_in_months < 36;
+ERROR 1054 (42S22): Unknown column 'age_in_months' in 'where clause'
+mysql> Describe pets;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(100) | NO   |     |         |                |
+| date_of_birth | varchar(100) | YES  |     | NULL    |                |
+| age           | int          | NO   |     | NULL    |                |
+| commands      | varchar(100) | NO   |     |         |                |
++---------------+--------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> Describe pack_animal;
+ERROR 1146 (42S02): Table 'human_friends.pack_animal' doesn't exist
+mysql> Describe pack_animals;
++---------------+--------------+------+-----+---------+----------------+
+| Field         | Type         | Null | Key | Default | Extra          |
++---------------+--------------+------+-----+---------+----------------+
+| id            | int          | NO   | PRI | NULL    | auto_increment |
+| name          | varchar(100) | NO   |     |         |                |
+| date_of_birth | varchar(100) | YES  |     | NULL    |                |
+| age_in_months | int          | YES  |     | NULL    |                |
++---------------+--------------+------+-----+---------+----------------+
+4 rows in set (0.01 sec)
+
+mysql> INSERT INTO young_animal_new (name, age) SELECT name, age FROM pets WHERE age > 12 AND age < 36 UNION SELECT name, age_in_months FROM pack_animals WHERE age_in_months > 12 AND age_in_months < 36;
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> select * from young_anmal_new;
+ERROR 1146 (42S02): Table 'human_friends.young_anmal_new' doesn't exist
+mysql> INSERT INTO young_animal_new (name, age) SELECT name, age FROM pets WHERE age > 12 AND age < 36 UNION SELECT name, age_in_months/12 FROM pack_animals WHERE age_in_months > 12 AND age_in_months < 36;
+Query OK, 2 rows affected (0.02 sec)
+Records: 2  Duplicates: 0  Warnings: 0
+
+mysql> SELECT * FROM young_animal_new;
++----+----------+-----+
+| id | name     | age |
++----+----------+-----+
+|  1 | horse_1  |  22 |
+|  2 | donkey_1 |  22 |
+|  4 | horse_1  |   2 |
+|  5 | donkey_1 |   2 |
++----+----------+-----+
+4 rows in set (0.00 sec)
