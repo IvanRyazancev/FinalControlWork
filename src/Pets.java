@@ -18,10 +18,7 @@ class Dog extends Pets {
 
     public Dog(String name, int age) {
         super(name, "Собака", age);
-
     }
-
-
 
     @Override
     public void trainNewCommand() {
@@ -41,8 +38,6 @@ class Cat extends Pets {
 
     }
 
-
-
     @Override
     public void trainNewCommand() {
         Scanner scanner = new Scanner(System.in);
@@ -60,7 +55,6 @@ class Hamster extends Pets {
         super(name, "Хомяк", age);
 
     }
-
 
     @Override
     public void trainNewCommand() {

@@ -1,6 +1,4 @@
 import java.util.*;
-
-
 abstract class Animal {
     private int id;
     private String name;

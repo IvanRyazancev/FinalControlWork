@@ -10,7 +10,6 @@ public class PackAnimals extends Animal {
     public void trainNewCommand() {
 
     }
-
 }
 
 class Horse extends PackAnimals {
@@ -53,7 +52,6 @@ class Donkey extends PackAnimals {
     public Donkey(String name, int age) {
         super(name,  "Осел", age);
     }
-
 
     @Override
     public void trainNewCommand() {
